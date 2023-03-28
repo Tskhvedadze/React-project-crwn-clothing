@@ -1,4 +1,4 @@
-import { compose, applyMiddleware, legacy_createStore } from 'redux'
+import { compose, createStore, applyMiddleware } from 'redux'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import logger from 'redux-logger'
@@ -23,13 +23,15 @@ const middleWares = [
     sagaMiddleware,
 ].filter(Boolean)
 
-const composedEnhancers = compose(applyMiddleware(...middleWares))
+const composeEnhancer =
+    (process.env.NODE_ENV !== 'production' &&
+        window &&
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    compose
 
-export const store = legacy_createStore(
-    persistedReducer,
-    undefined,
-    composedEnhancers,
-)
+const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares))
+
+export const store = createStore(persistedReducer, undefined, composedEnhancers)
 
 sagaMiddleware.run(rootSaga)
 
