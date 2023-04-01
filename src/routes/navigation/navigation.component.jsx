@@ -6,7 +6,7 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 
 import { selectIsCartOpen } from '../../store/cart/cart.selector.ts'
 import { selectCurrentUser } from '../../store/user/user.selector'
-import { signOutStart } from '../../store/user/user.action'
+import { signOutStart } from '../../store/user/user.action.ts'
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg'
 
