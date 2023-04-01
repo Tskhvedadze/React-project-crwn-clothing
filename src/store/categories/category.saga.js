@@ -5,9 +5,9 @@ import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils'
 import {
     fetchCategoriesSuccess,
     fetchCategoriesFailed,
-} from './category.action'
+} from './category.action.ts'
 
-import { CATEGORIES_ACTION_TYPES } from './category.types'
+import { CATEGORIES_ACTION_TYPES } from './category.types.ts'
 
 export function* fetchCategoriesAsync() {
     try {
