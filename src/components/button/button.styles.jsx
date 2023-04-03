@@ -4,10 +4,9 @@ import { SpinnerContainer } from '../spinner/spinner.styles'
 
 export const BaseButton = styled.button`
     min-width: 165px;
-    width: auto;
     height: 50px;
     letter-spacing: 0.5px;
-    line-height: 50px;
+    line-height: 0;
     padding: 0 35px 0 35px;
     font-size: 15px;
     background-color: black;
@@ -25,6 +24,18 @@ export const BaseButton = styled.button`
         background-color: white;
         color: black;
         border: 1px solid black;
+    }
+
+    @media screen and (max-width: 1200px) {
+        min-width: 0;
+        font-size: 12px;
+        padding: 0 15px;
+    }
+
+    @media screen and (max-width: 900px) {
+        min-width: 0;
+        font-size: 11px;
+        padding: 0 10px;
     }
 `
 
