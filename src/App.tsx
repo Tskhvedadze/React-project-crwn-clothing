@@ -1,13 +1,13 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { Routes, Route } from 'react-router-dom'
 
-import Home from './routes/home/home.component'
-import Navigation from './routes/navigation/navigation.component'
-import Authentication from './routes/authentication/authentication.components'
-import Shop from './routes/shop/shop.component'
-import Checkout from './routes/checkout/checkout.component'
+import Home from './routes/home/home.component.tsx'
+import Navigation from './routes/navigation/navigation.component.tsx'
+import Authentication from './routes/authentication/authentication.components.tsx'
+import Shop from './routes/shop/shop.component.tsx'
+import Checkout from './routes/checkout/checkout.component.tsx'
 
 import { checkUserSession } from './store/user/user.action.ts'
 
