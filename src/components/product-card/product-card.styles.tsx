@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ProductCardContainer = styled.div`
-    width: 22vw;
+    width: 90%;
     display: flex;
     flex-direction: column;
     height: 350px;
@@ -33,8 +33,12 @@ export const ProductCardContainer = styled.div`
         }
     }
 
+    @media screen and (max-width: 900px) {
+        width: 90%;
+    }
+
     @media screen and (max-width: 800px) {
-        width: 40vw;
+        width: 80%;
 
         &:hover {
             img {
@@ -49,6 +53,10 @@ export const ProductCardContainer = styled.div`
             font-size: 12px;
             display: block;
         }
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 75%;
     }
 `
 
